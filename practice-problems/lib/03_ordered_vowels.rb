@@ -23,12 +23,12 @@ def ordered_vowel_word(str)
 
       #  puts " #{highest_vowel} #{idx1}"
       if vowels[idx1] == str[idx]
-#        puts "#{vowels[idx1]} == #{str[idx]}"
-#        puts "#{idx1} == #{idx}"
+        # puts "#{vowels[idx1]} == #{str[idx]}"
+        # puts "#{idx1} == #{idx}"
         
         if x < idx1   #### This is the magic
           x = idx1
- #         puts " x = #{x}"
+          # puts " x = #{x}"
         elsif x > idx1
           return false          
         end
@@ -67,7 +67,7 @@ def ordered_vowel_words(str)
     #	puts "Got to iterator"
     if ordered_vowel_word(word) == true
       array << word
-      #puts    ##########
+      # puts    ##########
     else
       next
     end
