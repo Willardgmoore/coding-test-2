@@ -1,36 +1,23 @@
-def in_hash?(str)
-  if true
-    return true
-  else
-    return false
-  end
+def letter_count(str)
+  result = {}
 
+  idx = 0
+  while idx < str.length
 
-  def letter_count(str)
-    result = {}
-
-    idx = 0
-    while idx < str.length
-    
-      if in_hash?(str) == true
-        #Update Hash
-      else in_hash?(str) == false
-        result << "false"#Add hash
- #     else 
-#        puts "Error!"
-      end
-    
-
-      # check if in hash
-      # if true, update hash
-      # if false
-      # add to hash
-
+    if str[idx] == " " # to ignore spaces   # Checking for spaces
       idx += 1
+      next
     end
-
-    return result
+    
+    if result.has_key?(str[idx]) == true
+      #Update Hash, add tally
+      result[str[idx]] += 1
+    else    # Add to hash
+      result[str[idx]] = 1
+    end
+    
+    idx += 1
   end
 
+  return result
 end
-
