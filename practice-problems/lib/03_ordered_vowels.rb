@@ -9,25 +9,46 @@
 # Difficulty: 2/5
 
 def ordered_vowel_word(str)
-  vowels = {
-    a: 1,
-    e: 2,
-    i: 3,
-    o: 4,
-    u: 5,
-  }
-
+  vowels = ["a","e","i","o","u"]
+  x = -1
 
   idx = 0 
   while idx < str.length
- #   puts str
-# puts "idx=#{idx}, str=#{str}, str[idx]=#{str[idx]}, vowels[idx]=#{vowels[idx]} , #{vowels[str[idx]]}"
-  
-  puts vowels.has_key?(str[idx])
+    #   puts "  while idx #{idx} < #{str.length}"
+
+    idx1 = 0
+    while idx1 < vowels.length
+      #      puts "while idx1 #{idx1} < #{vowels.length}"
 
 
-    idx += 1
-  #  puts " #{idx} idx < #{str.length} length"    #Testing, Testing
+      #  puts " #{highest_vowel} #{idx1}"
+      if vowels[idx1] == str[idx]
+#        puts "#{vowels[idx1]} == #{str[idx]}"
+#        puts "#{idx1} == #{idx}"
+        
+        if x < idx1   #### This is the magic
+          x = idx1
+ #         puts " x = #{x}"
+        elsif x > idx1
+          return false          
+        end
+
+      end
+      
+      
+      if true #{}"idx1?" > vowel
+        vowel = "idx1?"
+      elsif false #vowel > "idx1?"
+        return false
+      end
+        
+
+
+
+      idx1 += 1   # Check each vowel
+    end
+
+    idx +=1
   end
 
   return true 
@@ -35,19 +56,23 @@ end
 
 
 
+
+
 def ordered_vowel_words(str)
   array = []
-  string = str.split
+  words = str.split
+  #puts " words = #{words}"
 
-  string.each do |str|
+  words.each do |word|
     #	puts "Got to iterator"
-    if ordered_vowel_word(str) == true
-      array << str
+    if ordered_vowel_word(word) == true
+      array << word
+      #puts    ##########
     else
       next
     end
   end
 
-  result = array.join
+  result = array.join " "
   return result
 end
