@@ -15,36 +15,36 @@
 
 def morse_encode(str)
 
-morse_code = {
-  "a" => ".-",
-  "b" => "-...",
-  "c" => "-.-.",
-  "d" => "-..",
-  "e" => ".",
-  "f" => "..-.",
-  "g" => "--.",
-  "h" => "....",
-  "i" => "..",
-  "j" => ".---",
-  "k" => "-.-",
-  "l" => ".-..",
-  "m" => "--",
-  "n" => "-.",
-  "o" => "---",
-  "p" => ".--.",
-  "q" => "--.-",
-  "r" => ".-.",
-  "s" => "...",
-  "t" => "-",
-  "u" => "..-",
-  "v" => "...-",
-  "w" => ".--",
-  "x" => "-..-",
-  "y" => "-.--",
-  "z" => "--..",
-  " " => " " # This is to keep the extra space between words, 
-  ## We will put a space between everything else anyways.
-}
+  morse_code = {
+    "a" => ".-",
+    "b" => "-...",
+    "c" => "-.-.",
+    "d" => "-..",
+    "e" => ".",
+    "f" => "..-.",
+    "g" => "--.",
+    "h" => "....",
+    "i" => "..",
+    "j" => ".---",
+    "k" => "-.-",
+    "l" => ".-..",
+    "m" => "--",
+    "n" => "-.",
+    "o" => "---",
+    "p" => ".--.",
+    "q" => "--.-",
+    "r" => ".-.",
+    "s" => "...",
+    "t" => "-",
+    "u" => "..-",
+    "v" => "...-",
+    "w" => ".--",
+    "x" => "-..-",
+    "y" => "-.--",
+    "z" => "--.."
+    #{}" " => " " # This is to keep the extra space between words, 
+    ## We will put a space between everything else anyways.
+  }
 
   idx = 0
   result = ""
@@ -52,9 +52,13 @@ morse_code = {
   puts " words = #{words}, morse = #{morse_code[words[idx]]}"		###############
 
 
+  while words.length > idx
+    result << "#{morse_code[words[idx]]} "
+    puts "result #{result}"		################
+    idx += 1
+  end
 
-  result = morse_code[words]
-  puts "result #{result}"		################
 
+  # Remove last space
   return result
 end
