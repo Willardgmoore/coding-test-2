@@ -42,23 +42,21 @@ def morse_encode(str)
     "x" => "-..-",
     "y" => "-.--",
     "z" => "--.."
-    #{}" " => " " # This is to keep the extra space between words, 
-    ## We will put a space between everything else anyways.
   }
 
   idx = 0
   result = ""
   words = str.split ""
-  puts " words = #{words}, morse = #{morse_code[words[idx]]}"		###############
+#  puts " words = #{words}, morse = #{morse_code[words[idx]]}"		###############
 
 
   while words.length > idx
     result << "#{morse_code[words[idx]]} "
-    puts "result #{result}"		################
+ #   puts "result #{result}"		################
     idx += 1
   end
 
-
+result = result [0..(result.length - 2)] 
   # Remove last space
   return result
 end
