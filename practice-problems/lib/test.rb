@@ -10,25 +10,25 @@
 
 
 def word_unscrambler(str, words)
-result = []
-dictionary = words
-scrambled = str
-#words = words.sort!  ###
+  result = []
+  dictionary = words
+  scrambled = str
+  #words = words.sort!  ###
 
-words.each do |word|
-	#puts " word.split = #{word.split}"  ########
-	test = word.split
-	test = test[0]
-	puts "test = #{test}"   ########
-	#puts "test.split = #{test.split}"  ######
-end
+  words.each do |word|
+    #puts " word.split = #{word.split}"  ########
+    test = word.split
+    test = test[0]
+    puts "test = #{test}"   ########
+    #puts "test.split = #{test.split}"  ######
+  end
 
 
-puts "dictionary = #{dictionary}"
-puts "scrambled = #{scrambled}"
-#result = test   ####
+  puts "dictionary = #{dictionary}"
+  puts "scrambled = #{scrambled}"
+  #result = test   ####
 
-return result
+  return result
 end
 
 #1
